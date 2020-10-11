@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mysqljob
+spec:
+  template:
+    metadata:
+      name: mysqljob
+    spec:
+      containers:
+      - name: mysqljob
+        image: nitishfc/mysqljob
+        command:
+         - "/bin/bash"
+         - "-c"
+         - "bash /root/job_script.sh"
+        volumeMounts:
+        -  name: script
+           mountPath: /root/
+      volumes:
+        - name: script
+          configMap:
+            name: myjob 
+      restartPolicy: Never

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: finalwiki
+  name: finalwiki
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: finalwiki
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: finalwiki
+    spec:
+      containers:
+      - image: nitishfc/media
+        name: finalwiki
+        securityContext:
+          privileged: true
+        #ports:
+        #- name: fullwiki
+        #  containerPort: 8082
+        volumeMounts:
+          - mountPath: "/var/www/html"
+            name: localsetting
+      volumes:
+        - name: localsetting
+          configMap:
+            name: setting

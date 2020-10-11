@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nmariadb
+    tier: nmysql-cache
+  name: nmariadb
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: nmariadb
+      tier: nmysql-cache
+  serviceName: nmariadb
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nmariadb
+        tier: nmysql-cache
+    spec:
+      volumes:
+        - name: pv-storage
+          persistentVolumeClaim:
+            claimName: pv-claim
+      containers:
+      - image: mariadb:10.3
+        name: nmariadb
+        env:
+         - name: MYSQL_ROOT_PASSWORD
+           valueFrom:
+             configMapKeyRef:
+               key: mariadb-pass-root
+               name: mysql-password
+        ports:
+        - containerPort: 3306
+          name: nmysql
+          protocol: TCP
+        #resources: {}
+        #terminationMessagePath: /dev/termination-log
+        #terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: pv-storage
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  updateStrategy:
+    type: RollingUpdate
+status:
+  replicas: 0
