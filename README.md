@@ -17,13 +17,13 @@ Objectives:-
     bash setup.sh
 •	After execution of the script following setups would run
 1.	The DB would be setup
->	Create the PV and PVC , in this case Hostpath  volume would be created
->	Create the service 
->	Create secret for MySQL DB password
->	Create Statefulset , will be checking the mariadb pod is created or not
->	Once pod created, Kubernetes job would be initiated
->	Configmap for script would be created
->	Kubernetes job will use the above created configmap. The Kubernetes job use the image mysqljob which is host on dockerhub:- https://hub.docker.com/r/nitishfc/mysqljob  and dockerfile :- https://github.com/nitishchauhan94/MediaWiki/blob/main/Kubernetes%20job/Dockerfile
+#	Create the PV and PVC , in this case Hostpath  volume would be created
+#	Create the service 
+#	Create secret for MySQL DB password
+#	Create Statefulset , will be checking the mariadb pod is created or not
+#	Once pod created, Kubernetes job would be initiated
+#	Configmap for script would be created
+#	Kubernetes job will use the above created configmap. The Kubernetes job use the image mysqljob which is host on dockerhub:- https://hub.docker.com/r/nitishfc/mysqljob  and dockerfile :- https://github.com/nitishchauhan94/MediaWiki/blob/main/Kubernetes%20job/Dockerfile
 2.	Creation of MediaWiki Application
 1.	Creation of configmap for LocalSettings.php will be used for MediaWiki
 2.	Create a NodePort service for exposing MediaWiki Application
