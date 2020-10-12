@@ -29,3 +29,6 @@ Objectives:-
 1.	Creation of configmap for LocalSettings.php will be used for MediaWiki
 2.	Create a NodePort service for exposing MediaWiki Application
 3.	Creation of MediaWiki Deployment. Image used is available on dockerhub:- https://hub.docker.com/r/nitishfc/media ,Dockerfile:- https://github.com/nitishchauhan94/MediaWiki/blob/main/MediaWiki%20Dockerfile/Dockerfile.txt
+
+After Deployment you can access the UI by using masternodeIP:31845/mediawiki
+![Image of MediaWiki](https://github.com/nitishchauhan94/MediaWiki/blob/main/mediawiki.png)
