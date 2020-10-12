@@ -1,6 +1,6 @@
 # MediaWiki
 
-1.	Mediawiki application has been containerized and is available on docker hub. Link:-[GitHub](https://hub.docker.com/r/nitishfc/media)
+1.	Mediawiki application has been containerized and is available on docker hub. Link:- ```https://hub.docker.com/r/nitishfc/media```
 1.1	I have used centos/system image for building the mediawiki container.
 1.2	I have used deployment object of kubernetes for running application, and it is using NodePort service.
 1.3	For updating the application it is using Rolling Update strategy.
