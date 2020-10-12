@@ -25,11 +25,14 @@ Objectives:-
 .	Once pod created, Kubernetes job would be initiated
 .	Configmap for script would be created
 .	Kubernetes job will use the above created configmap. The Kubernetes job use the image mysqljob which is host on 
-   ```dockerhub:- https://hub.docker.com/r/nitishfc/mysqljob``  and ```dockerfile :- https://github.com/nitishchauhan94/MediaWiki/blob/main/Kubernetes%20job/Dockerfile```
+   ```dockerhub:- https://hub.docker.com/r/nitishfc/mysqljob```  and 
+   ```dockerfile :- https://github.com/nitishchauhan94/MediaWiki/blob/main/Kubernetes%20job/Dockerfile```
 2.	Creation of MediaWiki Application
 1.	Creation of configmap for LocalSettings.php will be used for MediaWiki
 2.	Create a NodePort service for exposing MediaWiki Application
-3.	Creation of MediaWiki Deployment. Image used is available on ```dockerhub:- https://hub.docker.com/r/nitishfc/media``` ,```Dockerfile:- https://github.com/nitishchauhan94/MediaWiki/blob/main/MediaWiki%20Dockerfile/Dockerfile```
+3.	Creation of MediaWiki Deployment. Image used is available on 
+```dockerhub:- https://hub.docker.com/r/nitishfc/media``` ,`
+``Dockerfile:- https://github.com/nitishchauhan94/MediaWiki/blob/main/MediaWiki%20Dockerfile/Dockerfile```
 
 After Deployment you can access the UI by using masternodeIP:31845/mediawiki
 ![Image of MediaWiki](https://github.com/nitishchauhan94/MediaWiki/blob/main/mediawiki.png)
