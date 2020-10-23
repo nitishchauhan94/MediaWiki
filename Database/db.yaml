@@ -32,9 +32,9 @@ spec:
         env:
          - name: MYSQL_ROOT_PASSWORD
            valueFrom:
-             configMapKeyRef:
+             secretKeyRef:
                key: mariadb-pass-root
-               name: mysql-password
+               name: mysqlpassword
         ports:
         - containerPort: 3306
           name: nmysql

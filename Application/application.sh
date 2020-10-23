@@ -1,6 +1,6 @@
 #setting up application 
 echo "Creation of svc"
-kubectl apply -f svc.yaml
+kubectl apply -f using-svc.yaml
 sleep 3
 kubectl get svc 
 echo "Configmap creation"

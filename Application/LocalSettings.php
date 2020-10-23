@@ -53,10 +53,10 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "10.97.124.87:3306";
-$wgDBname = "wikidb";
-$wgDBuser = "media";
-$wgDBpassword = "checkpassword";
+$wgDBserver = "nmariadb.default.svc.cluster.local:3306";
+$wgDBname = "nitishdb1";
+$wgDBuser = "nitishuser1";
+$wgDBpassword = "YourPassword";
 
 # MySQL specific settings
 $wgDBprefix = "";

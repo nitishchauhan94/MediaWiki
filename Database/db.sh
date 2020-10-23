@@ -20,7 +20,7 @@ kubectl get statefulset
 sleep 40
 kubectl get po
 
-status=`kubectl get po | grep -i wikimariadb | awk '{print $3}'`
+status=`kubectl get po | grep -i nmariadb | awk '{print $3}'`
 if [ "$status" == Running ];
 then
 echo "Running kubernetes job script"
